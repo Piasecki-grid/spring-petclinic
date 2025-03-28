@@ -1,6 +1,7 @@
 name: Setup cloud infrastructure
 
 on:
+  push:
   workflow_dispatch:
     branches:
      - '*'
