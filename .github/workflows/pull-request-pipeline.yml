@@ -1,7 +1,6 @@
 name: Pull request pipeline
 
 on:
-  push:
   pull_request:
     types:
      - opened       

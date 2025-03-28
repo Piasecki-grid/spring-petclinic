@@ -1,7 +1,6 @@
 name: Setup cloud infrastructure
 
 on:
-  push:
   workflow_dispatch:
     branches:
      - '*'
@@ -35,18 +34,19 @@ jobs:
           mkdir cicd
           cd cicd
           git clone https://x-access-token:${{ secrets.INFRA_GITHUB_TOKEN }}@github.com/Piasecki-grid/grid-capstone-terraform-infra.git
-    
-      - name: Terraform Format & Validate
-        run: |
-          cd cicd/grid-capstone-terraform-infra
-          terraform fmt -check
-          terraform validate
 
           
       - name: Terraform Init
         run: |
           cd cicd/grid-capstone-terraform-infra
           terraform init
+
+
+      - name: Terraform Format & Validate
+        run: |
+          cd cicd/grid-capstone-terraform-infra
+          terraform fmt -check
+          terraform validate
 
 
       - name: Terraform Apply
