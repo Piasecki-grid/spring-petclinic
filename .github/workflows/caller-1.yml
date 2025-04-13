@@ -7,12 +7,6 @@ on:
       - .github/workflows/caller-1.yml
     branches:
       - main
-
-
-
-
-
-
       #trigger pipeline
 jobs:
   call-reusable-workflow-1-in-local-repo:
